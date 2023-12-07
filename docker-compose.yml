@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  frontend:
+    build: ./frontend
+    ports: 
+      - "80:80"
+
+  php:
+    image: php:8.1-apache
+    volumes:
+      - ./php:/var/www/html
+    ports:
+      - 8001:80
+    container_name: php
